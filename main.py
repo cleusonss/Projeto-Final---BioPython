@@ -9,13 +9,4 @@ organismos_do_fasta = ler_fasta(caminho_do_arquivo)
 
 organismo = organismos_do_fasta[0]
 seq = organismo.sequencia
-
-prot = seq.traduzir(False)
-proteinas = prot.split('*');
-totals = seq.calcular_percentual
-
-# for proteina in proteinas:
-#     print(proteina)
-#     print("")
-
-print(totals)
+print(seq.calcular_percentual(bases=["A", "T"]))

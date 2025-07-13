@@ -59,13 +59,37 @@ class Sequencia:
 
         return "".join(proteina)
     
-    def calcular_percentual(self):
-        total = self.sequencia.len
-        total_a = self.sequencia.upper().count("A")
-        total_t = self.sequencia.upper().count("T")
-        total_c = self.sequencia.upper().count("C")
-        total_g = self.sequencia.upper().count("G")
+    def calcular_percentual(self, bases=None):
+        seq = self.sequencia.upper()
+        
+        total = len(self.sequencia)
+        
+        total_a = seq.count("A")
+        total_t = seq.count("T")
+        total_c = seq.count("C")
+        total_g = seq.count("G")
+        
+        percentuais = {}
 
-        return [total, total_a, total_t, total_c, total_g]
+        if total == 0:
+            percentuais = {
+                "A": 0,
+                "T": 0,
+                "C": 0,
+                "G": 0
+            }
+        else:
+            percentuais = {
+                "A": total_a / total,
+                "T": total_t / total,
+                "C": total_c / total,
+                "G": total_g / total
+            }
+        
+        if bases is not None:
+            percentuais = {base: percentuais[base] for base in bases if base in percentuais}
+            
+        return percentuais
+            
 
         
