@@ -1,10 +1,23 @@
-import sys
-import os
+"""
+Problema 1: Análise de Composição de Nucleotídeos
+
+Este script realiza o parse de um arquivo multiFASTA e imprime:
+- O percentual de cada base (A, T, C, G)
+- O conteúdo GC para cada sequência
+
+Uso:
+    python problemas/problema_1.py
+"""
+
+import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from bio.ler_fasta import ler_fasta
 
 def main():
+    """
+    Executa a análise de composição de nucleotídeos para cada organismo do FASTA.
+    """
     organismos = ler_fasta("arquivos/Flaviviridae-genomes.fasta")
 
     print("Análise de composição de nucleotídeos:\n")
