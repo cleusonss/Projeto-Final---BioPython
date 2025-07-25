@@ -1,13 +1,5 @@
 from bio.sequencia import Sequencia
 
-<<<<<<< HEAD
-
-class OrganismoFasta:
-    def __init__(self, id, nome, sequencia):
-        self.id = id
-        self.nome = nome
-        self.sequencia = Sequencia(sequencia)
-=======
 class OrganismoFasta:
     """
     Representa um organismo biológico modelado a partir de uma entrada FASTA.
@@ -56,4 +48,3 @@ class OrganismoFasta:
         """
         return (f"OrganismoFasta(id={self.id!r}, nome={self.nome!r}, "
                 f"sequencia={self.sequencia!r})")
->>>>>>> anderson
